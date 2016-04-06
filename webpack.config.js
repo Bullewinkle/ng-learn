@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
     SRC: path.join(__dirname, 'src'),
@@ -21,5 +22,12 @@ module.exports = {
             { test: /\.scss/, loader: "style!css!sass" },
             { test: /\.js/, loader: "babel" },
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'eMailer',
+            template: `${PATHS.SRC}/index.html`,
+            filename: `${PATHS.DIST}/index.html`
+        })
+    ]
 };
