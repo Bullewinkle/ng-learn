@@ -1,4 +1,4 @@
-require('./index.scss');
+require('./app/styles/index.scss');
 
 class MyClass {
     constructor(opts) {
@@ -13,7 +13,7 @@ class MyClass {
 var instance = new MyClass();
 global.instance = window.top.instance = instance;
 global.content = global.document.getElementById('content') || global.document.body;
-global.content.innerHTML += `<button onclick="instance.say('hello! ')">Say hello!</button>`
+global.content.innerHTML += `<button onclick="instance.say('hello2! ')">Say hello!</button>`
 global.html = global.content.innerHTML
 
 // console.log(global,window.instance,instance)
